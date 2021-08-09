@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'univers';
+  src: url('UniversLTStd.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'univers-black--italic';
+  src: url('Univers-black-italic.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
