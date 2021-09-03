@@ -1,0 +1,71 @@
+@value colors: '../colors/colors.css';
+@value pink, violet, whiteHover, mustard from colors;
+
+.title {
+  width: 33%;
+}
+
+.user {
+  font-family: 'nimbus-sans';
+  font-size: 1.125rem;
+  text-align: right;
+  line-height: 1em;
+  background-color: #fff;
+  color: violet;
+  border: none;
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  min-width: 167px;
+  min-height: 40px;
+  height: 2.5rem;
+  width: 10.54rem;
+  transition: color 400ms ease-out, background-color 400ms ease-out;
+}
+
+.user:hover {
+  color: pink;
+  background-color: whiteHover;
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  stroke: violet;
+  transition: stroke 300ms ease-out;
+  width: 13px;
+}
+
+.user:hover .icon {
+  stroke: pink;
+}
+
+.buttonContainer {
+  position: relative;
+}
+
+.nav {
+  width: 300px;
+  background-color: whiteHover;
+  border-radius: 8px;
+  position: absolute;
+  top: 2.55rem;
+  left: 0;
+}
+
+.list {
+  display: block;
+}
+
+.item {
+  display: block;
+}
+
+.link {
+  color: pink;
+  text-decoration: none;
+  padding: 4px;
+}

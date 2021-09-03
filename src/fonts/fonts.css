@@ -1,13 +1,24 @@
 @font-face {
-  font-family: 'univers';
-  src: url('UniversLTStd.otf') format('otf');
+  font-family: 'nimbus-serif--bold-italic';
+  src: url('./NimbusRomNo9L-MedIta.woff') format('woff'),
+       url('./NimbusRomNo9L-MedIta.ttf') format('truetype'),
+       url('./NimbusRomNo9L-MedIta.eot') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'univers-black--italic';
-  src: url('Univers-black-italic.ttf') format('ttf');
+  font-family: 'nimbus-sans--bold-italic';
+  src: url('./NimbusSanL-BolIta.woff') format('woff'),
+       url('./NimbusSanL-BolIta.ttf') format('truetype'),
+       url('./NimbusSanL-BolIta.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nimbus-sans';
+  src: url('./NimbusSanL-Reg.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

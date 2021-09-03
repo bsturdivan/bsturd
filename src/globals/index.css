@@ -1,0 +1,9 @@
+@import 'reset-css';
+@import '../fonts/fonts.css';
+
+:global main {
+  all: inherit;
+  padding: unset;
+  margin: unset;
+  background-color: transparent;
+}

@@ -7,6 +7,7 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -22,7 +23,15 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -31,6 +40,10 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
     ],
   },
