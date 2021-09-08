@@ -1,5 +1,5 @@
 @value colors: '../colors/colors.css';
-@value pink, violet, whiteHover, mustard from colors;
+@value pink, violet, offWhite, white1, white2, mustard from colors;
 
 .title {
   width: 33%;
@@ -10,7 +10,7 @@
   font-size: 1.125rem;
   text-align: right;
   line-height: 1em;
-  background-color: #fff;
+  background-color: white2;
   color: violet;
   border: none;
   padding: 10px;
@@ -25,9 +25,14 @@
   transition: color 400ms ease-out, background-color 400ms ease-out;
 }
 
+.user--active {
+  background-color: white1;
+}
+
+.user--active,
 .user:hover {
   color: pink;
-  background-color: whiteHover;
+  background-color: white1;
 }
 
 .icon {
@@ -39,6 +44,7 @@
   width: 13px;
 }
 
+.user--active .icon,
 .user:hover .icon {
   stroke: pink;
 }
@@ -48,11 +54,13 @@
 }
 
 .nav {
-  width: 300px;
-  background-color: whiteHover;
+  background-color: white1;
   border-radius: 8px;
+  text-align: left;
+  padding: 4px;
+  width: max-content;
   position: absolute;
-  top: 2.55rem;
+  top: 2.75rem;
   left: 0;
 }
 
@@ -65,7 +73,13 @@
 }
 
 .link {
+  display: block;
   color: pink;
   text-decoration: none;
-  padding: 4px;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.link:hover {
+  background-color: white2;
 }
