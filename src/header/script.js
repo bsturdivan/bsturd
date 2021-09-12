@@ -20,9 +20,6 @@ function closeDropdown(target) {
 
 function openDropdown(markup, target) {
   const dropdownMarkup = template(dropdown, { styles })
-  const parsedDropdown = insertIntoDOM(markup, [
-    { selector: `.${styles.buttonContainer}`, tree: dropdownMarkup },
-  ])
   const dataToDOM = data.map((item) => {
     const parsedItem = template(dropdownItem, { styles, item })
     return { selector: `.${styles.list}`, tree: parsedItem }

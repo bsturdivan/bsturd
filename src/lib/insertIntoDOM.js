@@ -9,7 +9,8 @@ function extractTree(parentNode, selector, tree) {
     return console.error(`${tree} must be an HTMLElement or a Function`)
   }
 
-  parentNode.querySelector(selector).append(tree)
+  const insertionPoint = parentNode.querySelector(selector) || parentNode
+  insertionPoint.append(tree)
 }
 
 export default function insertIntoDOM(parent, insertionArray) {

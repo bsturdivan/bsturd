@@ -1,5 +1,6 @@
 import './globals/index.css'
 import layout from './layout/script.js'
+import Hub from './lib/hub'
 
 function component() {
   const element = document.createElement('div')
@@ -12,3 +13,5 @@ function component() {
 }
 
 document.body.appendChild(component())
+
+Hub.pub('load')
