@@ -5,6 +5,7 @@ import { template } from '../lib/template'
 import insertIntoDOM from '../lib/insertIntoDOM'
 import styles from './styles.css'
 import Hub from '../lib/hub'
+import Markov from 'markov-strings'
 
 let paragrphLength = 0
 let charLength = []
@@ -23,6 +24,11 @@ function removeGlitch(characterClass, addedClass) {
 }
 
 function handleIntersect(entries, observer) {
+  const paragraphIndex = paragrphLength - 1
+  debugger
+
+  const markov = new Markov({ stateSize: paragrphLength - 1 })
+
   observer.unobserve(entries[0].target)
 }
 
@@ -56,7 +62,7 @@ function onLoadActions() {
     const characterNumber = Math.floor(Math.random() * (maxChar - 0) + 0)
     addGlitch(
       interval,
-      `.a${paragraphNumber}-${characterNumber}`,
+      `.a${paragraphNumber - 1}-${characterNumber - 1}`,
       styles.glitch,
     )
   }, interval)
@@ -64,7 +70,7 @@ function onLoadActions() {
   window.setInterval(() => {
     paragraphInt = Math.random() * (maxParInt - minParInt) + minParInt
     const paragraphNumber = Math.floor(Math.random() * (maxPar - 0) + 0)
-    addGlitch(paragraphInt, `.p${paragraphNumber}`, styles.paragraphGlitch)
+    addGlitch(paragraphInt, `.p${paragraphNumber - 1}`, styles.paragraphGlitch)
   }, paragraphInt)
 
   createObserver()
