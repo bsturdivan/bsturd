@@ -1,9 +1,63 @@
 :root {
-  @value offWhite: #F2F2F2;
-  @value pink: #AA4465;
-  @value mustard: #CA9A39;
-  @value violet: #CEBBC9;
-  @value darkBlue: #273043;
-  @value white2: #F8F8F8;
-  @value white1: #ffffff;
+  --darken-ratio: 1; /* 4.57 */
+  --midtone-darken-ratio: 1; /* 1.39 */
+  --opacity: 1;
+  --saturation: 1; /* 0 */
+
+  --white-h: 221;
+  --white-s: 26%;
+  --white-l: 96%;
+  --contrast-l: 21%;
+
+  --pink-h: 341;
+  --pink-s: 43%;
+  --pink-l: 47%;
+
+  --yellow-h: 40;
+  --yellow-s: 58%;
+  --yellow-l: 51%;
+
+  --base: hsla(
+    var(--white-h),
+    calc(var(--white-s) * var(--saturation)),
+    calc(var(--white-l) / var(--darken-ratio)),
+    var(--opacity)
+  );
+  --contrast: hsla(
+    var(--white-h),
+    calc(var(--white-s) * var(--saturation)),
+    calc(var(--contrast-l) * var(--darken-ratio)),
+    var(--opacity)
+  );
+  --contrast-transparent: hsla(
+    var(--white-h),
+    calc(var(--white-s) * var(--saturation)),
+    calc(var(--contrast-l) * var(--darken-ratio)),
+    0.4
+  );
+  --pink: hsla(
+    var(--pink-h),
+    calc(var(--pink-s) * var(--saturation)),
+    calc(var(--pink-l) * var(--midtone-darken-ratio)),
+    var(--opacity)
+  );
+  --yellow: hsla(
+    var(--yellow-h),
+    calc(var(--yellow-s) * var(--saturation)),
+    var(--yellow-l),
+    var(--opacity)
+  );
+}
+
+button:hover,
+a:hover {
+  transition: opacity ease-out 300ms;
+  opacity: 0.7;
+}
+
+:export {
+  base: var(--base);
+  contrast: var(--contrast);
+  pink: var(--pink);
+  yellow: var(--yellow);
 }

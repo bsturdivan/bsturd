@@ -1,0 +1,32 @@
+.handle--pink {
+  fill: var(--pink);
+}
+
+.handle--yellow {
+  fill: var(--yellow);
+}
+
+.handle__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+::slotted(.handle__item) {
+  font-family: gt-flexa;
+  font-style: italic;
+  font-weight: bold;
+  color: var(--pink);
+  font-size: 1.25rem;
+  padding: 4px 0;
+  text-decoration: none;
+  transition: opacity ease 300ms, color ease 300ms;
+}
+
+::slotted(.handle__item:hover) {
+  opacity: 0.8;
+}
+
+::slotted(.handle__item:active) {
+  color: var(--yellow);
+}

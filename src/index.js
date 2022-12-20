@@ -1,17 +1,11 @@
-import './globals/index.css'
-import layout from './layout/script.js'
-import Hub from './lib/hub'
+import './globals'
+import Layout from './layout'
 
-function component() {
-  const element = document.createElement('div')
-  element.setAttribute('id', 'bsturd')
-  const layoutTree = layout()
+window.customElements.define('bsturd-layout', Layout)
 
-  element.appendChild(layoutTree)
+const bsturd = document.createElement('div')
+const layout = document.createElement('bsturd-layout')
+bsturd.setAttribute('id', 'bsturd')
+bsturd.appendChild(layout)
 
-  return element
-}
-
-document.body.appendChild(component())
-
-Hub.pub('load')
+document.body.appendChild(bsturd)

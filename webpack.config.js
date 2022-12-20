@@ -8,38 +8,53 @@ module.exports = {
   devServer: {
     static: './dist',
     hot: true,
+    port: 4200,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Brian Sturdivan | Software Engineer',
+      title: 'Brian Sturdivan | Good guy',
     }),
   ],
   output: {
-    filename: 'bundle.js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  resolve: {
+    fallback: {
+      fs: false,
+    },
+  },
+  experiments: {
+    topLevelAwait: true,
   },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/i,
-        use: [
-          'style-loader',
+        oneOf: [
           {
+            assert: { type: 'css' },
             loader: 'css-loader',
             options: {
-              modules: true,
+              exportType: 'css-style-sheet',
             },
+          },
+          {
+            use: [
+              'style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                },
+              },
+            ],
           },
         ],
       },

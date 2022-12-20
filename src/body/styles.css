@@ -1,0 +1,73 @@
+.body {
+  width: 48rem;
+  margin: 2.5rem auto;
+  position: relative;
+  z-index: 1;
+}
+
+.body__main-conainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.body__quote {
+  font-family: gt-super;
+  font-size: 2.5rem;
+  line-height: 1.2em;
+  color: var(--contrast);
+  width: 83%;
+  position: relative;
+  padding-left: 3rem;
+  border-left: 4px solid var(--contrast-transparent);
+}
+
+.hanging-quote {
+  position: absolute;
+  left: 1.8rem;
+}
+
+.body__main-copy {
+  font-family: gt-super;
+  font-size: 1.8rem;
+  line-height: 1.5em;
+  color: var(--contrast);
+  font-weight: normal;
+}
+
+hr {
+  border: none;
+  border-top: 1.5px solid var(--yellow);
+  width: 1rem;
+  margin: 2.5rem auto;
+}
+
+.body__header {
+  font-family: gt-flexa;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--pink);
+  margin-bottom: 1.5rem;
+}
+
+.body__subtitle {
+  font-family: gt-flexa;
+  font-size: 1.5rem;
+  color: var(--yellow);
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+}
+
+.body__header--add {
+  color: var(--contrast);
+}
+
+.body__copy {
+  font-family: gt-super-book;
+  font-size: 1.25rem;
+  line-height: 1.4em;
+  color: var(--contrast);
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}

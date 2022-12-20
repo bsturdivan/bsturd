@@ -1,24 +1,27 @@
 @font-face {
-  font-family: 'nimbus-serif--bold-italic';
-  src: url('./NimbusRomNo9L-MedIta.woff') format('woff'),
-       url('./NimbusRomNo9L-MedIta.ttf') format('truetype'),
-       url('./NimbusRomNo9L-MedIta.eot') format('embedded-opentype');
+  font-family: 'gt-super';
+  src: url('./GT-Super-Display-Light.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'nimbus-sans--bold-italic';
-  src: url('./NimbusSanL-BolIta.woff') format('woff'),
-       url('./NimbusSanL-BolIta.ttf') format('truetype'),
-       url('./NimbusSanL-BolIta.eot') format('embedded-opentype');
+  font-family: 'gt-super-book';
+  src: url('./GT-Super-Text-Book.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'nimbus-sans';
-  src: url('./NimbusSanL-Reg.ttf') format('truetype');
+  font-family: 'gt-flexa';
+  src: url('./GT-Flexa-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'gt-flexa';
+  src: url('./GT-Flexa-Bold-Italic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
 }

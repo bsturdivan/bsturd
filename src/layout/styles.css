@@ -1,32 +1,7 @@
-@value colors: '../colors/colors.css';
-@value offWhite from colors;
-
-.bsturd {
-  background-color: offWhite;
-  min-height: 100vh;
-  font-size: 16px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
+.layout__background {
+  background-color: var(--base);
   box-sizing: border-box;
-  width: 100%;
-}
-
-.body {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 40px;
-}
-
-.bodyLeft {
-  width: 43.7%;
-}
-
-.bodyRight {
-  width: 47.2%;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 2.5rem;
 }
