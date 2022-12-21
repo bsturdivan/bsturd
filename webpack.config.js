@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -14,6 +15,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Brian Sturdivan | Good guy',
     }),
+    new FaviconsWebpackPlugin('./src/images/favicon.svg'),
   ],
   output: {
     filename: 'main.js',

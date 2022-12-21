@@ -1,3 +1,9 @@
+@media (max-width: 770px) {
+  .logo {
+    width: 85%;
+  }
+}
+
 .logo--pink {
   fill: var(--pink);
 }

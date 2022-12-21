@@ -21,10 +21,12 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.7.1",
+    "favicons": "^7.0.2",
+    "favicons-webpack-plugin": "^6.0.0",
     "file-loader": "^6.2.0",
     "gh-pages": "^4.0.0",
     "html-loader": "^2.1.2",
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.52.1",
     "webpack-cli": "^4.2.0",
@@ -33,7 +35,6 @@
   "dependencies": {
     "core-js": "^3.18.2",
     "install": "^0.13.0",
-    "markov-strings": "^3.0.1",
     "npm": "^8.19.2",
     "reset-css": "^5.0.1"
   },
@@ -42,6 +43,6 @@
     "type": "git",
     "url": "git+https://github.com/bsturdivan/bsturd.git"
   },
-  "homepage": "https://github.com/bsturdivan/bsturd#readme",
+  "homepage": "https://www.bsturd.com",
   "description": ""
 }

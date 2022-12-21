@@ -2,6 +2,8 @@
   background-color: var(--base);
   box-sizing: border-box;
   min-height: 100vh;
+  width: 100vw;
+  overflow-x: clip;
   position: relative;
   padding-bottom: 2.5rem;
 }

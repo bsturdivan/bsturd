@@ -1,6 +1,7 @@
 import logo from './handle.html'
 import sheet from './styles.css' assert { type: 'css' }
 import random from '../lib/Random'
+import colors from '../colors/colors.css'
 
 class Handle extends HTMLElement {
   constructor() {
@@ -20,6 +21,8 @@ class Handle extends HTMLElement {
     const parser = new DOMParser()
     const markup = parser.parseFromString(logo.trim(), 'text/html').body
       .firstChild
+
+    markup.addEventListener('click', this.toggleSideNav, true)
 
     const glitch = markup.getElementsByClassName('glitch')[0]
     const glitchLeft = markup.getElementsByClassName('glitch--left')[0]
@@ -54,6 +57,26 @@ class Handle extends HTMLElement {
 
   getXOffset() {
     return random({ min: -2, max: 6 })
+  }
+
+  toggleSideNav(event) {
+    const el = event.target
+
+    if (el.dataset.toggle !== 'nav') {
+      return false
+    }
+
+    const isOpen = JSON.parse(el.dataset.open)
+    const menu = this.querySelector('.handle__container')
+    el.dataset.open = !isOpen
+
+    if (isOpen) {
+      menu.classList.add('handle__container--hidden')
+      el.style.color = colors.contrast
+    } else {
+      menu.classList.remove('handle__container--hidden')
+      el.style.color = colors.base
+    }
   }
 }
 
