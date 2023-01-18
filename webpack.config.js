@@ -14,6 +14,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Brian Sturdivan | Good guy',
+      meta: {
+        description:
+          'I write code for a fashion brand. I converse with a computer and humanize it, to teach it to be approachable to my nephew, my parents, and everyone in between.',
+        viewport: 'width=device-width, initial-scale=1.0',
+        robots: 'index, follow',
+      },
     }),
     new FaviconsWebpackPlugin('./src/images/favicon.svg'),
   ],
