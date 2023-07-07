@@ -1,60 +1,77 @@
-<nav class="navigation">
-  <navigation-logo></navigation-logo>
+<div class="navigation" role="banner">
+  <h1>
+    <span class="visually-hidden">Brian Sturdivan</span>
+    <navigation-logo></navigation-logo>
+  </h1>
 
-  <div class="navigation__right">
-    <button
-      type="button"
-      name="scheme"
-      value="false"
-      data-scheme="dark-theme"
-      class="navigation__item navigation__item--dark"
-    >
-      Dark Mode
-    </button>
-    <button
-      type="button"
-      name="scheme"
-      value="false"
-      data-scheme="desaturated"
-      class="navigation__item navigation__item--grey"
-    >
-      Greyscale
-    </button>
+  <div class="navigation__right" role="navigation" aria-label="Main">
+    <div class="navigation__toolbar" role="toolbar" aria-label="Page Controls" aria-controls="bsturd">
+      <button type="button" name="scheme" value="false" data-scheme="dark-theme"
+        class="navigation__item navigation__item--dark"
+        tabindex="1"
+      >
+        Dark Mode
+      </button>
+      <button
+        type="button"
+        name="scheme"
+        value="false"
+        data-scheme="desaturated"
+        class="navigation__item navigation__item--grey"
+        tabindex="2"
+      >
+        Greyscale
+      </button>
+      <button type="button" name="scheme" value="false" data-scheme="bionic" class="navigation__item navigation__item--bionic"
+        tabindex="3">
+        Bionic Reading
+      </button>
+      </div>
 
     <navigation-handle>
-      <div class="handle__links">
+      <nav class="handle__links" role="menu">
         <a
           href="https://github.com/bsturdivan/bsturd"
           class="handle__item"
           target="_blank"
+          role="menuitem"
+          tabindex="4"
           nofollow
-          >Github</a
         >
-        <a href="/Brian-Sturdivan-resume.pdf" class="handle__item" download
-          >Resume</a
-        >
+          Github
+          </a>
+          <a href="/Brian-Sturdivan-resume.pdf" class="handle__item" role="link" tabindex="5" download>Resume</a>
         <a
           href="https://www.linkedin.com/in/bsturd/"
           class="handle__item"
           target="_blank"
+          role="menuitem"
+          tabindex="6"
           nofollow
-          >LinkedIn</a
         >
+          LinkedIn
+          </a>
         <a
           href="https://www.instagram.com/bsturd/"
           class="handle__item"
           target="_blank"
+          role="menuitem"
+          tabindex="7"
           nofollow
-          >Instagram</a
         >
+          Instagram
+          </a>
         <a
           href="https://open.spotify.com/artist/0DYfiAbiFa8lOm5CyUrpfx"
           class="handle__item"
           target="_blank"
+          role="menuitem"
+          tabindex="8"
           nofollow
-          >My Band [April]</a
         >
-      </div>
+          My Band [April]
+          </a>
+          </nav>
     </navigation-handle>
   </div>
-</nav>
+</div>

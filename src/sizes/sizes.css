@@ -1,12 +1,19 @@
 :root {
+  --font-size-50: 1.1rem;
   --font-size-100: 1.25rem;
   --font-size-200: 1.6rem;
   --font-size-300: 2.5rem;
   --font-size-400: 3rem;
 }
 
+@media (max-width: 985px) {
+  :root {
+    --font-size-50: 1.05rem;
+  }
+}
 @media (max-width: 600px) {
   :root {
+    --font-size-50: 1.05rem;
     --font-size-100: 1.25rem;
     --font-size-200: 1.35rem;
     --font-size-300: 1.6rem;

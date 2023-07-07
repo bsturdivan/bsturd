@@ -1,3 +1,19 @@
+h1 {
+  margin: 0;
+}
+
+.visually-hidden {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -7,20 +23,32 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  height: 7.375rem;
+  height: 9rem;
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   backdrop-filter: blur(6px);
+  mask: linear-gradient(transparent, white 60%);
+    -webkit-backdrop-filter: blur(6px);
   z-index: 2;
 }
 
 .navigation__right {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: baseline;
-  gap: 0.5rem;
+  gap: 1rem;
+    width: 100%;
+  }
+  
+  .navigation__toolbar {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    gap: 1rem;
+    transform: translateY(-4px);
 }
 
 .navigation__item {
@@ -28,14 +56,14 @@
   font-family: gt-flexa;
   font-weight: bold;
   font-style: italic;
-  font-size: var(--font-size-100);
+  font-size: var(--font-size-50);
   color: var(--contrast);
-  padding: 4px 8px;
+  padding: 4px 0;
   border: none;
   background: none;
   display: block;
-  transform: translateY(-8px);
   cursor: pointer;
+  border-bottom: 1px solid transparent;
 }
 
 .navigation__item:hover {
@@ -46,20 +74,8 @@
   color: var(--pink);
 }
 
-.navigation__item::before {
-  content: '';
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--contrast);
-  position: relative;
-  top: -4px;
-  right: -2px;
-}
-
-.navigation__item[value='true']::before {
-  background-color: var(--pink);
+.navigation__item[value='true'] {
+  border-bottom: 1px solid var(--pink);
 }
 
 .handle {
@@ -86,11 +102,21 @@
   color: var(--yellow);
 }
 
+@media (max-width: 1000px) {
+  .navigation__toolbar {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .navigation__right {
+    gap: 0.5rem;
+  }
+}
 @media (max-width: 890px) {
   .navigation {
     flex-direction: column-reverse;
-    padding-left: 7%;
-    padding-right: 7%;
+    padding-left: 1.5rem;
+      padding-right: 1.5rem;
     margin: 0 auto;
     width: 100%;
   }
@@ -107,15 +133,16 @@
     opacity: unset;
   }
 
-  .navigation__right {
-    gap: 1.5rem;
-  }
-
-  .navigation__item {
-    padding: 4px 0;
-  }
-
   .navigation__item:hover {
     opacity: unset;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .navigation__toolbar,
+  .navigation__right {
+    justify-content: space-between;
+    gap: unset;
   }
 }

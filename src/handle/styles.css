@@ -1,3 +1,15 @@
+.visually-hidden {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .handle--pink {
   fill: var(--pink);
 }
@@ -59,7 +71,7 @@
     display: block;
     position: absolute;
     top: 3rem;
-    right: 7%;
+    right: 1.5rem;
     line-height: 1em;
     background: transparent;
     border: none;
@@ -67,6 +79,7 @@
     font-size: var(--font-size-300);
     cursor: pointer;
     z-index: 2;
+    padding: 0 0.5rem 0.5rem;
   }
 }
 
@@ -77,5 +90,6 @@
 
   .handle__toggle {
     top: 3.5rem;
+    right: calc(7% - 0.5rem);
   }
 }

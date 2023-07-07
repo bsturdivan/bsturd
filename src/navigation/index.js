@@ -33,7 +33,7 @@ class Navigation extends HTMLElement {
       const el = themeButtons.find(
         (item) => item.getAttribute('data-scheme') === event.detail.theme,
       )
-      el.setAttribute('value', event.detail.value)
+      event.detail.element.setAttribute('value', event.detail.value)
     })
 
     for (let i = 0; i < themeButtons.length; i++) {
@@ -57,7 +57,7 @@ class Navigation extends HTMLElement {
     const scheme = el.dataset.scheme.toLowerCase()
     const value = JSON.stringify(!boolValue)
 
-    document.dispatchEvent(themeChanged({ theme: scheme, value }))
+    document.dispatchEvent(themeChanged({ element: el, theme: scheme, value }))
   }
 }
 

@@ -3,11 +3,7 @@ import sheet from './styles.css' assert { type: 'css' }
 import Navigation from '../navigation'
 import Body from '../body'
 import { themeChanged } from '../lib/events'
-
-const SCHEMES = {
-  dark: 'dark-theme',
-  desaturated: 'desaturated',
-}
+import { SCHEMES } from '../lib/themes'
 
 class Layout extends HTMLElement {
   constructor() {
@@ -36,9 +32,11 @@ class Layout extends HTMLElement {
     const storedDesaturatedTheme = window.localStorage.getItem(
       SCHEMES.desaturated,
     )
+    const storedBionicTheme = window.localStorage.getItem(SCHEMES.bionic)
 
     this.darkTheme(storedDarkTheme)
     this.desaturateTheme(storedDesaturatedTheme)
+    this.bionicTheme(storedBionicTheme)
 
     document.addEventListener('themeChanged', (event) => {
       if (event.detail.theme === SCHEMES.dark) {
@@ -47,6 +45,10 @@ class Layout extends HTMLElement {
 
       if (event.detail.theme === SCHEMES.desaturated) {
         this.desaturateTheme(event.detail.value)
+      }
+
+      if (event.detail.theme === SCHEMES.bionic) {
+        this.bionicTheme(event.detail.value)
       }
     })
 
@@ -80,6 +82,11 @@ class Layout extends HTMLElement {
     const ratio = parsedvalue ? 0 : 1
     document.documentElement.style.setProperty('--saturation', ratio)
     window.localStorage.setItem(SCHEMES.desaturated, parsedvalue)
+  }
+
+  bionicTheme(value) {
+    const parsedvalue = JSON.parse(value)
+    window.localStorage.setItem(SCHEMES.bionic, parsedvalue)
   }
 }
 

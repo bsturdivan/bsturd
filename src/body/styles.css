@@ -35,6 +35,7 @@
   font-size: calc(var(--font-size-200) * 1.2);
   text-align: justify;
   line-height: 1.5em;
+  letter-spacing: 0.015em;
   color: var(--contrast);
   font-weight: normal;
   margin: 0;
@@ -69,9 +70,9 @@ hr {
 }
 
 .body__copy {
-  font-family: gt-super-book;
+  font-family: gt-america;
   font-size: var(--font-size-100);
-  line-height: 1.4em;
+  line-height: 1.5em;
   color: var(--contrast);
   margin-bottom: 1.5rem;
   margin-top: 0;
