@@ -1,9 +1,12 @@
 .layout__background {
   background-color: var(--base);
   box-sizing: border-box;
+  height: 100vh;
   min-height: 100vh;
+  height: fill-available;
   width: 100vw;
-  overflow-x: clip;
+    padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+      overflow-x: hidden;
   position: relative;
-  padding-bottom: 2.5rem;
+  top: 0
 }

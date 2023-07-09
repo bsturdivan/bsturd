@@ -14,11 +14,24 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Brian Sturdivan | Good guy',
+      lang: 'en-US',
+      googleAnalytics: {
+        trackingId: 'G-44PDK1F0BB',
+        pageViewOnLoad: true
+      },
       meta: {
         description:
           'I write code for a fashion brand. I converse with a computer and humanize it, to teach it to be approachable to my nephew, my parents, and everyone in between.',
-        viewport: 'width=device-width, initial-scale=1.0',
+        viewport: 'width=device-width, initial-scale=1.0 viewport-fit=cover',
         robots: 'index, follow',
+        'og:title': 'Brian Sturdivan | Good guy',
+        'og:description': 'I write code for a fashion brand. I converse with a computer and humanize it, to teach it to be approachable to my nephew, my parents, and everyone in between.',
+        attribute: {
+          name: 'og:image',
+          content: 'https://en.gravatar.com/userimage/27056451/c2dde4e2da056e1801dde06142461eb1?size=1000',
+        },
+        'og:url': 'https://bsturd.com/',
+        'og:type': 'profile',
       },
     }),
     new FaviconsWebpackPlugin('./src/images/favicon.svg'),
