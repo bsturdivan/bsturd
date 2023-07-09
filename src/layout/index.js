@@ -1,3 +1,4 @@
+import { ga } from '../lib/ga'
 import html from './markup.html'
 import sheet from './styles.css' assert { type: 'css' }
 import Navigation from '../navigation'
@@ -27,6 +28,7 @@ class Layout extends HTMLElement {
       .firstChild
 
     this.shadowRoot.appendChild(markup)
+    ga.page()
 
     const storedDarkTheme = window.localStorage.getItem(SCHEMES.dark)
     const storedDesaturatedTheme = window.localStorage.getItem(
@@ -39,6 +41,8 @@ class Layout extends HTMLElement {
     this.bionicTheme(storedBionicTheme)
 
     document.addEventListener('themeChanged', (event) => {
+      ga.track('themeChange', { theme: event.detail.theme })
+
       if (event.detail.theme === SCHEMES.dark) {
         this.darkTheme(event.detail.value)
       }
