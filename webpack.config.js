@@ -41,12 +41,10 @@ module.exports = {
       {
         userAgent: "Googlebot",
         allow: "/",
-        crawlDelay: 2,
       },
       {
         userAgent: "*",
         allow: "/",
-        crawlDelay: 10,
       },
     ],
     host: "http://bsturd.com",
