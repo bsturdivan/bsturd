@@ -1,0 +1,8 @@
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 2
+
+User-agent: *
+Allow: /
+Crawl-delay: 10
+Host: bsturd.com
