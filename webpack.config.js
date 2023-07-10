@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const RobotstxtPlugin = require("robotstxt-webpack-plugin")
 
 module.exports = {
   mode: 'development',
@@ -15,9 +16,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Brian Sturdivan | Good guy',
       lang: 'en-US',
-      googleAnalytics: {
-        trackingId: 'G-44PDK1F0BB',
-        pageViewOnLoad: true
+      link: {
+        rel: 'canonical',
+        href: 'https://bsturd.com'
       },
       meta: {
         description:
@@ -35,6 +36,21 @@ module.exports = {
       },
     }),
     new FaviconsWebpackPlugin('./src/images/favicon.svg'),
+    new RobotstxtPlugin({ 
+      policy: [
+      {
+        userAgent: "Googlebot",
+        allow: "/",
+        crawlDelay: 2,
+      },
+      {
+        userAgent: "*",
+        allow: "/",
+        crawlDelay: 10,
+      },
+    ],
+    host: "http://bsturd.com",
+  }),
   ],
   output: {
     filename: 'main.js',
