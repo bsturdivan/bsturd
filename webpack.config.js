@@ -1,7 +1,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-const RobotstxtPlugin = require("robotstxt-webpack-plugin")
+const RobotstxtPlugin = require('robotstxt-webpack-plugin')
+const SitemapPlugin = require('sitemap-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -36,6 +37,20 @@ module.exports = {
       },
     }),
     new FaviconsWebpackPlugin('./src/images/favicon.svg'),
+    new SitemapPlugin({
+      base: 'https://bsturd.com',
+      paths: [
+        {
+          path: '/',
+          lastmod: new Date(),
+        },
+      ],
+      options: {
+        filename: 'sitemap.xml',
+        lastmod: true,
+        priority: 1.0,
+      }
+    }),
     new RobotstxtPlugin({ 
       policy: [
       {
@@ -47,6 +62,7 @@ module.exports = {
         allow: "/",
       },
     ],
+    sitemap: "http://bsturd.com/sitemap.xml",
     host: "http://bsturd.com",
   }),
   ],
