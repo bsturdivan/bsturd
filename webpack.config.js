@@ -5,7 +5,10 @@ const RobotstxtPlugin = require('robotstxt-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: {
+    app: './src/index.js',
+    sitemap: './src/sitemap.xml',
+  },
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
