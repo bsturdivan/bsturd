@@ -2,7 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const RobotstxtPlugin = require('robotstxt-webpack-plugin')
-const SitemapPlugin = require('sitemap-webpack-plugin')
+const SitemapPlugin = require('sitemap-webpack-plugin').default
 
 module.exports = {
   mode: 'development',
@@ -42,7 +42,7 @@ module.exports = {
       paths: [
         {
           path: '/',
-          lastmod: new Date(),
+          lastmod: true,
         },
       ],
       options: {
