@@ -12,6 +12,8 @@ class Layout extends HTMLElement {
     this.attachShadow({ mode: 'open' })
     customElements.define('navigation-nav', Navigation)
     customElements.define('bsturd-body', Body)
+
+    ga.page()
   }
 
   connectedCallback() {
@@ -28,7 +30,6 @@ class Layout extends HTMLElement {
       .firstChild
 
     this.shadowRoot.appendChild(markup)
-    ga.page()
 
     const storedDarkTheme = window.localStorage.getItem(SCHEMES.dark)
     const storedDesaturatedTheme = window.localStorage.getItem(
@@ -41,7 +42,7 @@ class Layout extends HTMLElement {
     this.bionicTheme(storedBionicTheme)
 
     document.addEventListener('themeChanged', (event) => {
-      ga.track('themeChange', { theme: event.detail.theme })
+      ga.track('themeChange', { theme: event.detail.theme, value: event.detail.value })
 
       if (event.detail.theme === SCHEMES.dark) {
         this.darkTheme(event.detail.value)
