@@ -5,10 +5,7 @@ const RobotstxtPlugin = require('robotstxt-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: {
-    app: './src/index.js',
-    sitemap: './src/sitemap.xml',
-  },
+  entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
@@ -108,6 +105,13 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
+      },
+      {
+        test: /\.xml/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'sitemap.xml',
+        },
       },
     ],
   },

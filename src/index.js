@@ -1,4 +1,5 @@
 import './globals'
+import './sitemap.xml'
 import Layout from './layout'
 
 window.customElements.define('bsturd-layout', Layout)
