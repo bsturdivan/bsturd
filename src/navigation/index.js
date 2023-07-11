@@ -3,6 +3,7 @@ import sheet from './styles.css' assert { type: 'css' }
 import Logo from '../logo'
 import Handle from '../handle'
 import { themeChanged } from '../lib/events'
+import { ga } from '../lib/ga'
 
 class Navigation extends HTMLElement {
   constructor() {
@@ -25,9 +26,11 @@ class Navigation extends HTMLElement {
     const markup = parser.parseFromString(html.trim(), 'text/html').body
       .firstChild
 
-    markup.addEventListener('click', this.toggleTheme, true)
+    markup.addEventListener('click', this.handleNavClicks, true)
 
     const themeButtons = [...markup.getElementsByClassName('navigation__item')]
+
+
 
     document.addEventListener('themeChanged', (event) => {
       const el = themeButtons.find(
@@ -45,19 +48,29 @@ class Navigation extends HTMLElement {
     this.shadowRoot.appendChild(markup)
   }
 
-  toggleTheme(event) {
+  handleNavClicks(event) {
     const el = event.target
 
-    if (el.getAttribute('name') !== 'scheme') {
-      return false
+    if (el.getAttribute('name') === 'scheme') {
+      this.toggleTheme(el)
     }
 
+    if (el.getAttribute('name') === 'resume') {
+      this.trackDownload()
+    }
+  }
+
+  toggleTheme(el) {
     const valueAttribute = el.getAttribute('value').toLowerCase()
     const boolValue = JSON.parse(valueAttribute)
     const scheme = el.dataset.scheme.toLowerCase()
     const value = JSON.stringify(!boolValue)
 
     document.dispatchEvent(themeChanged({ element: el, theme: scheme, value }))
+  }
+
+  trackDownload() {
+    ga.track('download', { value: 'resume' })
   }
 }
 
