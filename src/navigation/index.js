@@ -52,25 +52,17 @@ class Navigation extends HTMLElement {
     const el = event.target
 
     if (el.getAttribute('name') === 'scheme') {
-      this.toggleTheme(el)
+      const valueAttribute = el.getAttribute('value').toLowerCase()
+      const boolValue = JSON.parse(valueAttribute)
+      const scheme = el.dataset.scheme.toLowerCase()
+      const value = JSON.stringify(!boolValue)
+
+      document.dispatchEvent(themeChanged({ element: el, theme: scheme, value }))
     }
 
     if (el.getAttribute('name') === 'resume') {
-      this.trackDownload()
+      ga.track('download', { value: 'resume' })
     }
-  }
-
-  toggleTheme(el) {
-    const valueAttribute = el.getAttribute('value').toLowerCase()
-    const boolValue = JSON.parse(valueAttribute)
-    const scheme = el.dataset.scheme.toLowerCase()
-    const value = JSON.stringify(!boolValue)
-
-    document.dispatchEvent(themeChanged({ element: el, theme: scheme, value }))
-  }
-
-  trackDownload() {
-    ga.track('download', { value: 'resume' })
   }
 }
 
