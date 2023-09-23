@@ -1,12 +1,13 @@
 .layout__background {
   background-color: var(--base);
+  background: linear-gradient(-45deg, var(--base) 50%, var(--mauve) 100%);
   box-sizing: border-box;
   height: 100vh;
   min-height: 100vh;
-  height: fill-available;
+  height: max-content;
   width: 100vw;
-    padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
-      overflow-x: hidden;
+  padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
+  overflow-x: hidden;
   position: relative;
   top: 0
 }

@@ -13,6 +13,10 @@
   --pink-s: 43%;
   --pink-l: 47%;
 
+  --mauve-h: 316;
+  --mauve-s: 16%;
+  --mauve-l: 80%;
+
   --yellow-h: 40;
   --yellow-s: 58%;
   --yellow-l: 51%;
@@ -47,6 +51,12 @@
     var(--yellow-l),
     var(--opacity)
   );
+  --mauve: hsla(
+    var(--mauve-h),
+    calc(var(--mauve-s) * var(--saturation)),
+    calc(var(--mauve-l) / var(--darken-ratio)),
+    var(--opacity)
+  );
 }
 
 button:hover,
@@ -60,4 +70,5 @@ a:hover {
   contrast: var(--contrast);
   pink: var(--pink);
   yellow: var(--yellow);
+  mauve: var(--mauve);
 }

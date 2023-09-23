@@ -1,4 +1,6 @@
 body {
   background-color: var(--base);
-  height: fill-available;
+  background: linear-gradient(90deg, var(--mauve) 20%, var(--base) 100%);
+  height: max-content;
+  letter-spacing: 0.04em;
 }

@@ -30,8 +30,8 @@ h1 {
   left: 0;
   right: 0;
   backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 3;
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 3;
 }
 
 .navigation__right {
@@ -40,15 +40,15 @@ h1 {
   align-items: baseline;
   gap: 1rem;
   width: 100%;
-  }
-  
-  .navigation__toolbar {
-    width: 100%;
-    display: flex;
-    align-items: baseline;
-    justify-content: flex-end;
-    gap: 1rem;
-    transform: translateY(-4px);
+}
+
+.navigation__toolbar {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 1rem;
+  transform: translateY(-4px);
 }
 
 .navigation__item {
