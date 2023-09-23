@@ -33,14 +33,7 @@ module.exports = {
         },
         'og:url': 'https://bsturd.com/',
         'og:type': 'profile',
-        'theme-color': {
-          content: 'black-tranlucent',
-          media: '(prefers-color-scheme: light)',
-        },
-        'theme-color': {
-          content: 'black-tranlucent',
-          media: '(prefers-color-scheme: dark)',
-        },
+        'theme-color': 'black-translucent',
       },
     }),
     new FaviconsWebpackPlugin('./src/images/favicon.svg'),
