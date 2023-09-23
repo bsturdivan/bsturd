@@ -26,7 +26,7 @@
 
 .hanging-quote {
   position: absolute;
-  left: 1.8rem;
+  left: 1.9rem;
   line-height: 1em;
 }
 
@@ -126,10 +126,6 @@ hr {
     padding-left: 1.3 rem;
     margin: 0 auto;
     width: unset;
-  }
-
-  .hanging-quote {
-    left: 0.2rem;
   }
 }
 
