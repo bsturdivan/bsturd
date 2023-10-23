@@ -2,6 +2,10 @@
   --nav-height: 9rem;
 }
 
+html {
+  background-color: var(--mauve);
+}
+
 body {
   /* background-color: var(--base);
   background: linear-gradient(90deg, var(--mauve) 20%, var(--base) 100%); */

@@ -33,7 +33,6 @@ module.exports = {
         },
         'og:url': 'https://bsturd.com/',
         'og:type': 'profile',
-        'theme-color': 'red',
       },
     }),
     new FaviconsWebpackPlugin('./src/images/favicon.svg'),
