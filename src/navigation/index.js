@@ -2,8 +2,9 @@ import html from './markup.html'
 import sheet from './styles.css' assert { type: 'css' }
 import Logo from '../logo'
 import Handle from '../handle'
-import { themeChanged } from '../lib/events'
+import { themeChanged, toggleNavigation } from '../lib/events'
 import { ga } from '../lib/ga'
+import colors from '../colors/colors.css'
 
 class Navigation extends HTMLElement {
   constructor() {
@@ -23,14 +24,13 @@ class Navigation extends HTMLElement {
 
   render() {
     const parser = new DOMParser()
-    const markup = parser.parseFromString(html.trim(), 'text/html').body
-      .firstChild
+    const markup = parser.parseFromString(html.trim(), 'text/html').body.firstChild
 
     markup.addEventListener('click', this.handleNavClicks, true)
 
     const themeButtons = [...markup.getElementsByClassName('navigation__item')]
 
-
+    markup.querySelectorAll('[data-toggle="nav"]')[0].addEventListener('click', this.handleToggleSideNavClick, true)
 
     document.addEventListener('themeChanged', (event) => {
       const el = themeButtons.find(
@@ -46,6 +46,17 @@ class Navigation extends HTMLElement {
     }
 
     this.shadowRoot.appendChild(markup)
+  }
+
+  handleToggleSideNavClick(event) {
+    const el = event.target
+    const valueAttribute = el.dataset.open.toLowerCase()
+    const isOpen = JSON.parse(valueAttribute)
+    el.dataset.open = !isOpen
+
+    isOpen ? el.style.color = colors.contrast : el.style.color = colors.base
+
+    document.dispatchEvent(toggleNavigation({ element: el, open: !isOpen }))
   }
 
   handleNavClicks(event) {

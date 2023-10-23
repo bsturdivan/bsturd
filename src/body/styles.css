@@ -136,6 +136,7 @@ hr {
 @media (max-width: 800px) {
   .body {
     width: 85%;
+    top: var(--nav-height);
   }
 }
 

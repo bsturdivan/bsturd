@@ -24,8 +24,8 @@ h1 {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  height: 9rem;
-  position: sticky;
+  height: var(--nav-height);
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -40,6 +40,10 @@ h1 {
   align-items: baseline;
   gap: 1rem;
   width: 100%;
+}
+
+.navigation__toggle {
+  display: none;
 }
 
 .navigation__toolbar {
@@ -135,6 +139,22 @@ h1 {
 
   .navigation__item:hover {
     opacity: unset;
+  }
+
+  .navigation__toggle {
+    transition: color 500ms ease-out;
+    display: block;
+    position: absolute;
+    top: 4.9rem;
+    right: 1.5rem;
+    line-height: 1em;
+    background: transparent;
+    border: none;
+    color: var(--contrast);
+    font-size: var(--font-size-300);
+    cursor: pointer;
+    z-index: 2;
+    padding: 0 0.5rem 0.5rem;
   }
 }
 

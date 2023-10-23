@@ -1,6 +1,11 @@
+:root {
+  --nav-height: 9rem;
+}
+
 body {
-  background-color: var(--base);
-  background: linear-gradient(90deg, var(--mauve) 20%, var(--base) 100%);
+  /* background-color: var(--base);
+  background: linear-gradient(90deg, var(--mauve) 20%, var(--base) 100%); */
+  background: linear-gradient(-45deg, var(--base) 50%, var(--mauve) 100%);
   height: max-content;
   letter-spacing: 0.04em;
 }

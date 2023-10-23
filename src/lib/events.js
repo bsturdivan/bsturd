@@ -13,3 +13,11 @@ export const triggerThemeChange = (detail = {}) => {
     composed: true,
   })
 }
+
+export const toggleNavigation = (detail = {}) => {
+  return new CustomEvent('toggleNavigation', {
+    bubbles: true,
+    detail,
+    composed: true,
+  })
+}

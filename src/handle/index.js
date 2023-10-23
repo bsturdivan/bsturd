@@ -1,7 +1,6 @@
 import logo from './handle.html'
 import sheet from './styles.css' assert { type: 'css' }
 import random from '../lib/Random'
-import colors from '../colors/colors.css'
 
 class Handle extends HTMLElement {
   constructor() {
@@ -19,10 +18,9 @@ class Handle extends HTMLElement {
 
   render() {
     const parser = new DOMParser()
-    const markup = parser.parseFromString(logo.trim(), 'text/html').body
-      .firstChild
+    const markup = parser.parseFromString(logo.trim(), 'text/html').body.firstChild
 
-    markup.addEventListener('click', this.toggleSideNav, true)
+    document.addEventListener('toggleNavigation', event => this.toggleSideNav(event, markup))
 
     const glitch = markup.getElementsByClassName('glitch')[0]
     const glitchLeft = markup.getElementsByClassName('glitch--left')[0]
@@ -59,23 +57,14 @@ class Handle extends HTMLElement {
     return random({ min: -2, max: 6 })
   }
 
-  toggleSideNav(event) {
-    const el = event.target
-
-    if (el.dataset.toggle !== 'nav') {
-      return false
-    }
-
-    const isOpen = JSON.parse(el.dataset.open)
-    const menu = this.querySelector('.handle__container')
-    el.dataset.open = !isOpen
+  toggleSideNav(event, menu) {
+    const el = event.detail.element
+    const isOpen = event.detail.open
 
     if (isOpen) {
-      menu.classList.add('handle__container--hidden')
-      el.style.color = colors.contrast
+      menu.classList.add('handle__container--open')
     } else {
-      menu.classList.remove('handle__container--hidden')
-      el.style.color = colors.base
+      menu.classList.remove('handle__container--open')
     }
   }
 }
