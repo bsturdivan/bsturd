@@ -158,8 +158,13 @@ h1 {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 600px) {
+  .navigation__toggle {
+    top: 4.2rem
+  }
+}
 
+@media (max-width: 420px) {
   .navigation__toolbar,
   .navigation__right {
     justify-content: space-between;

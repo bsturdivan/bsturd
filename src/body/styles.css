@@ -1,8 +1,9 @@
 .body {
   width: 48rem;
-  margin: 2.5rem auto;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
+  top: var(--nav-height);
 }
 
 .body__main-conainer {
@@ -136,7 +137,6 @@ hr {
 @media (max-width: 800px) {
   .body {
     width: 85%;
-    top: var(--nav-height);
   }
 }
 
