@@ -12,5 +12,5 @@ body {
   background: linear-gradient(-45deg, var(--base) 50%, var(--mauve) 100%);
   height: max-content;
   letter-spacing: 0.04em;
-  margin-bottom: calc(var(--nav-height) * 2);
+  padding-bottom: calc(var(--nav-height) * 2);
 }

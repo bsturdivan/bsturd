@@ -145,7 +145,7 @@ h1 {
     transition: color 500ms ease-out;
     display: block;
     position: absolute;
-    top: 4.9rem;
+    top: 4.2rem;
     right: 1.5rem;
     line-height: 1em;
     background: transparent;
@@ -160,7 +160,7 @@ h1 {
 
 @media (max-width: 600px) {
   .navigation__toggle {
-    top: 4.2rem
+    top: 4.9rem
   }
 }
 
