@@ -5,3 +5,7 @@
   width: 100vw;
   padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
 }
+
+@keyframes b{
+  100% {background-position: 50% 0, 60% 50%}
+}

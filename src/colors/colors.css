@@ -1,25 +1,33 @@
 :root {
-  --darken-ratio: 1; /* 4.57 */
-  --midtone-darken-ratio: 1; /* 1.39 */
+  --darken-ratio: 1; /* 5 */
+  --midtone-darken-ratio: 1; /* 2 */
   --opacity: 1;
   --saturation: 1; /* 0 */
 
-  --white-h: 221;
-  --white-s: 26%;
+  --white-h: 195;
+  --white-s: 80%;
   --white-l: 96%;
   --contrast-l: 21%;
 
-  --pink-h: 341;
-  --pink-s: 43%;
-  --pink-l: 47%;
+  --pink-h: 355;
+  --pink-s: 47%;
+  --pink-l: 62%;
 
-  --mauve-h: 316;
-  --mauve-s: 16%;
-  --mauve-l: 80%;
+  --mauve-h: 354;
+  --mauve-s: 59%;
+  --mauve-l: 96%;
 
-  --yellow-h: 40;
-  --yellow-s: 58%;
-  --yellow-l: 51%;
+  --yellow-h: 37;
+  --yellow-s: 81%;
+  --yellow-l: 64%;
+
+  --blue-h: 202;
+  --blue-s: 26%;
+  --blue-l: 60%;
+
+  --green-h: 103;
+  --green-s: 33%;
+  --green-l: 55%;
 
   --base: hsla(
     var(--white-h),
@@ -49,6 +57,18 @@
     var(--yellow-h),
     calc(var(--yellow-s) * var(--saturation)),
     var(--yellow-l),
+    var(--opacity)
+  );
+   --blue: hsla(
+    var(--blue-h),
+    calc(var(--blue-s) * var(--saturation)),
+    var(--blue-l),
+    var(--opacity)
+  );
+   --green: hsla(
+    var(--green-h),
+    calc(var(--green-s) * var(--saturation)),
+    var(--green-l),
     var(--opacity)
   );
   --mauve: hsla(

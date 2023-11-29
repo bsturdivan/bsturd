@@ -30,7 +30,7 @@ h1 {
   left: 0;
   right: 0;
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px) opacity(20%);
   z-index: 3;
 }
 
@@ -56,7 +56,7 @@ h1 {
 }
 
 .navigation__item {
-  transition: opacity ease 300ms, color ease 300ms;
+  transition: filter ease 300ms, color ease 300ms;
   font-family: gt-flexa;
   font-weight: bold;
   font-style: italic;
@@ -68,10 +68,12 @@ h1 {
   display: block;
   cursor: pointer;
   border-bottom: 1px solid transparent;
+  filter: blur(0.8px);
 }
 
 .navigation__item:hover {
-  opacity: 0.8;
+  text-shadow: 2px 1px 0 var(--blue), -2px -1px 0 var(--green);
+  filter: blur(1.5px);
 }
 
 .navigation__item:active {
@@ -80,6 +82,7 @@ h1 {
 
 .navigation__item[value='true'] {
   border-bottom: 1px solid var(--pink);
+  text-shadow: 2px 1px 0 var(--blue), -2px -1px 0 var(--green);
 }
 
 .handle {
@@ -94,16 +97,20 @@ h1 {
   font-size: var(--font-size-200);
   padding: 4px 0;
   text-decoration: none;
-  transition: opacity ease 300ms, color ease 300ms;
+  transition: filter ease 300ms, color ease 300ms;
   white-space: nowrap;
+  filter: blur(0.8px);
 }
 
 .handle__item:hover {
-  opacity: 0.8;
+  text-shadow: 2px 1px 0 var(--blue), -2px -1px 0 var(--green);
+  filter: blur(1.5px);
 }
 
 .handle__item:active {
   color: var(--yellow);
+  text-shadow: 2px 1px 0 var(--blue), -2px -1px 0 var(--green);
+  filter: blur(2px);
 }
 
 @media (max-width: 1000px) {
@@ -155,6 +162,10 @@ h1 {
     cursor: pointer;
     z-index: 2;
     padding: 0 0.5rem 0.5rem;
+  }
+
+  .navigation__toggle[data-open="true"] {
+    color: var(--contrast);
   }
 }
 

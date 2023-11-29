@@ -4,7 +4,7 @@ import sheet from './styles.css' assert { type: 'css' }
 import Navigation from '../navigation'
 import Body from '../body'
 import { themeChanged } from '../lib/events'
-import { SCHEMES } from '../lib/themes'
+import { SCHEMES, DARKEN_RATIO, MIDTONE_RATIO } from '../lib/themes'
 
 class Layout extends HTMLElement {
   constructor() {
@@ -71,14 +71,12 @@ class Layout extends HTMLElement {
 
   darkTheme(value) {
     const parsedvalue = JSON.parse(value)
-    const ratio = parsedvalue ? 4.57 : 1
-    const midRatio = parsedvalue ? 1.39 : 1
 
     window.localStorage.setItem(SCHEMES.dark, parsedvalue)
-    document.documentElement.style.setProperty('--darken-ratio', ratio)
+    document.documentElement.style.setProperty('--darken-ratio', DARKEN_RATIO[parsedvalue])
     document.documentElement.style.setProperty(
       '--midtone-darken-ratio',
-      midRatio,
+      MIDTONE_RATIO[parsedvalue],
     )
   }
 

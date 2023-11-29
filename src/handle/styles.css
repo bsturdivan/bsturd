@@ -10,12 +10,36 @@
   clip-path: inset(50%);
   white-space: nowrap;
 }
-.handle--pink {
-  fill: var(--pink);
+
+.handle {
+  filter: blur(0.8px);
 }
 
-.handle--yellow {
-  fill: var(--yellow);
+.handle--pink {
+  fill: var(--pink);
+  animation: move-left 2400ms infinite alternate-reverse;
+}
+
+.handle--blue {
+  fill: var(--blue);
+  animation: glitch 2000ms infinite linear alternate-reverse;
+  animation-delay: -333ms;
+  transform: translate(2px, 0);
+  clip-path: polygon(0 50%, 100% 51%, 100% 100%, 0 100%);
+}
+
+.handle--green {
+  fill: var(--green);
+  animation: glitch 2000ms infinite linear alternate-reverse, move-right 1333ms infinite alternate-reverse;;
+  animation-delay: -666ms;
+  transform: translate(-2px, 1px);
+  clip-path: polygon(0 0, 100% 0, 100% 47%, 0 47%);
+}
+
+.ligature--green {
+  fill: var(--green);
+  transform-origin: 50% 0%;
+  transform: skew(4deg, 1deg);
 }
 
 .handle__container {
@@ -46,7 +70,7 @@
 
   .handle__container {
     transition: translate 300ms ease-out;
-    background-color: var(--contrast);
+    background-color: var(--base);
     padding: 4.3rem 2rem;
     height: 100vh;
     width: 60%;

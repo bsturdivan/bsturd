@@ -54,7 +54,7 @@ class Navigation extends HTMLElement {
     const isOpen = JSON.parse(valueAttribute)
     el.dataset.open = !isOpen
 
-    isOpen ? el.style.color = colors.contrast : el.style.color = colors.base
+    // isOpen ? el.style.color = colors.contrast : el.style.color = colors.base
 
     document.dispatchEvent(toggleNavigation({ element: el, open: !isOpen }))
   }
