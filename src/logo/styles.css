@@ -16,16 +16,22 @@
   }
 }
 
+.logo--yellow {
+  fill: var(--yellow);
+}
+
 .logo--pink {
   fill: var(--pink);
-  animation: move-left 2000ms infinite alternate-reverse;
+  animation: glitch 1400ms infinite linear alternate-reverse, move-left 2600ms infinite alternate-reverse;
+  animation-delay: -666ms;
+  transform: translate(2px, -1px);
 }
 
 .logo--blue {
   fill: var(--blue);
   animation: glitch 1400ms infinite linear alternate-reverse, move-right 1333ms infinite alternate-reverse;
-  animation-delay: -666ms;
-  transform: translate(2px, 0);
+  animation-delay: -420ms;
+  transform: translate(1px, 0);
   clip-path: polygon(0 50%, 100% 51%, 100% 100%, 0 100%);
 }
 
@@ -43,8 +49,8 @@
   transform: skewX(-4deg);
 }
 
-.ligature--blue {
-  fill: var(--blue);
+.ligature--pink {
+  fill: var(--pink);
   transform-origin: 50% 0%;
   transform: skewX(3deg);
 }
