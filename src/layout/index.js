@@ -31,10 +31,10 @@ class Layout extends HTMLElement {
 
     this.shadowRoot.appendChild(markup)
 
-    const storedDarkTheme = window.localStorage.getItem(SCHEMES.dark)
+    const storedDarkTheme = window.localStorage.getItem(SCHEMES.dark) || false
     const storedDesaturatedTheme = window.localStorage.getItem(
       SCHEMES.desaturated,
-    )
+    ) || false
     const storedBionicTheme = window.localStorage.getItem(SCHEMES.bionic)
 
     this.darkTheme(storedDarkTheme)
@@ -59,7 +59,7 @@ class Layout extends HTMLElement {
 
     if (
       window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches ||
       (!window.localStorage.hasOwnProperty(SCHEMES.dark) ||
         window.localStorage.getItem(SCHEMES.dark) === 'null')
     ) {
