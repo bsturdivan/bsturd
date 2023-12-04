@@ -26,6 +26,12 @@
   text-shadow: -1px 0 2px var(--pink), 1px 1px 1px var(--blue), -1px 0 2px var(--green);
 }
 
+@media (prefers-color-scheme: dark) {
+  .body__quote {
+    text-shadow: -1px 0 2px var(--pink), 1px 1px 1px var(--mauve), -1px 0 2px var(--green);
+  }
+}
+
 .hanging-quote {
   position: absolute;
   left: 1.9rem;

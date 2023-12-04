@@ -55,3 +55,9 @@
   transform: skewX(3deg);
 }
 
+@media (prefers-color-scheme: dark) {
+  .ligature--pink,
+  .logo--pink {
+    fill: var(--mauve);
+  }
+}

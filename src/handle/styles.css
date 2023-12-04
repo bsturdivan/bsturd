@@ -28,6 +28,12 @@
   clip-path: polygon(0 50%, 100% 51%, 100% 100%, 0 100%);
 }
 
+@media (prefers-color-scheme: dark) {
+  .handle--blue {
+    fill: var(--mauve);
+  }
+}
+
 .handle--green {
   fill: var(--green);
   animation: glitch 2000ms infinite linear alternate-reverse, move-right 1333ms infinite alternate-reverse;;
