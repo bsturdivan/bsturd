@@ -18,7 +18,7 @@ module.exports = {
       lang: 'en-US',
       link: {
         rel: 'canonical',
-        href: 'https://bsturd.com'
+        href: 'https://b.sturd.online',
       },
       meta: {
         description:
@@ -26,30 +26,32 @@ module.exports = {
         viewport: 'width=device-width, initial-scale=1.0 viewport-fit=cover',
         robots: 'index, follow',
         'og:title': 'Brian Sturdivan | Good guy',
-        'og:description': 'I write code for a fashion brand. I converse with a computer and humanize it, to teach it to be approachable to my nephew, my parents, and everyone in between.',
+        'og:description':
+          'I write code for a fashion brand. I converse with a computer and humanize it, to teach it to be approachable to my nephew, my parents, and everyone in between.',
         attribute: {
           name: 'og:image',
-          content: 'https://en.gravatar.com/userimage/27056451/c2dde4e2da056e1801dde06142461eb1?size=1000',
+          content:
+            'https://en.gravatar.com/userimage/27056451/c2dde4e2da056e1801dde06142461eb1?size=1000',
         },
-        'og:url': 'https://bsturd.com/',
+        'og:url': 'https://b.sturd.online/',
         'og:type': 'profile',
       },
     }),
     new FaviconsWebpackPlugin('./src/images/favicon.svg'),
-    new RobotstxtPlugin({ 
+    new RobotstxtPlugin({
       policy: [
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-      },
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-    ],
-    sitemap: "http://bsturd.com/sitemap.xml",
-    host: "http://bsturd.com",
-  }),
+        {
+          userAgent: 'Googlebot',
+          allow: '/',
+        },
+        {
+          userAgent: '*',
+          allow: '/',
+        },
+      ],
+      sitemap: 'http://b.sturd.online/sitemap.xml',
+      host: 'http://b.sturd.online',
+    }),
   ],
   output: {
     filename: 'main.js',
