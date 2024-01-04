@@ -58,14 +58,11 @@ class Layout extends HTMLElement {
     })
 
     if (
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches ||
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ||
       !window.localStorage.hasOwnProperty(SCHEMES.dark) ||
-        window.localStorage.getItem(SCHEMES.dark) === 'null')
+      window.localStorage.getItem(SCHEMES.dark) === 'null'
     ) {
-      document.dispatchEvent(
-        themeChanged({ theme: SCHEMES.dark, value: 'true' }),
-      )
+      document.dispatchEvent(themeChanged({ theme: SCHEMES.dark, value: 'true' }))
     }
   }
 
