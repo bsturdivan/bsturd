@@ -3,5 +3,5 @@ Allow: /
 
 User-agent: *
 Allow: /
-Sitemap: http://bsturd.com/sitemap.xml
-Host: bsturd.com
+Sitemap: http://b.sturd.online/sitemap.xml
+Host: b.sturd.online
