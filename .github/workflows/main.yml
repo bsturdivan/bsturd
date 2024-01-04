@@ -20,7 +20,7 @@ jobs:
           run: yarn build
 
         - name: Deploy
-          uses: lbertenasco/s3-deploy@v4
+          uses: Reggionick/s3-deploy@v4.0.0
           with:
             folder: /
             bucket: ${{ secrets.S3_BUCKET }}
