@@ -1,0 +1,97 @@
+{
+  "basics": {
+    "name": "Brian Sturdivan",
+    "label": "Product Engineer",
+    "email": "bsturdivan@gmail.com",
+    "phone": "6195926788",
+    "url": "https://b.sturd.online",
+    "summary": "When I think over my accomplishments in my last thirteen years of programming and try to understand what I have done and the commonalities through the years; there is one thread I keep pulling. Everything I have accomplished has been in collective with the people by my side for the benefit of the customer. As a team member I seek to look beyond myself and strive to support the team and the community I serve. From government agencies to startups in their infancy, I’ve learned, grown, and built for the people around me. I can't begin to put my experiences and contributions into just a few words but I can say that I love what I do and what we've done together.",
+    "location": {
+      "city": "San Francisco",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "bsturd",
+        "url": "linkedin.com/in/bsturd"
+      },
+      {
+        "network": "Github",
+        "username": "bsturdivan",
+        "url": "github.com/bsturdivan"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Everlane",
+      "position": "Senior Product Engineer | Full Stack",
+      "url": "https://everlane.com",
+      "startDate": "2013-07-10",
+      "endDate": "2024-01-04",
+      "highlights": [
+        "Built an e-commerce platform with a group of four rag-tag engineers and one designer, all learning on the job, from a brand vision to the successful business Everlane has become.",
+        "Grew, maintained, and matured an engineering, product, and design team based on low ego, curiosity, and compassion. Starting with four people sharing a desk and growing to the incredible group of 18 engineers, 4 designers, and 4 Product managers we have today.",
+        "Created a new employee onboarding plan for the engineering, product, and design team; decreasing onboarding time to 5 business days and assuring engineers will deploy production code on day 1.",
+        "Created a social integration process for new company employees, introducing them to key people on each team integral to the new employee's role.",
+        "Discovered, advocated for, and integrated the prototype for Everlane's headless CMS provider, Builder.io. After spending over a year building our own custom CMS and site merchandising tool and a product asset management system; I helped make the decision to buy over continuing to build when the custom tools became too ineffective and engineering intensive.",
+        "Lead the digital asset management integration allowing for a streamlined workflow from creative assets to site merchandising as a part of the goal to increase productivity by 40%",
+        "As part of the digital asset management integration, lead to a 32% decrease in page load time and 4% increase in sales.",
+        "Assisted in the integration of payment processors such as Stripe, Paypal, ApplePay, and ShopPay; leading to increases in conversion by as much as 8%.",
+        "Lead every holiday marketing campaign, in various capacities, since I joined in 2013",
+        "Increased Everlane's SEO indexable page footprint by 300% by creating SEO and user friendly URLs for filtered product listing and search pages."
+      ]
+    },
+    {
+      "name": "CBS",
+      "position": "Software Engineer",
+      "url": "https://cbs.com",
+      "startDate": "2011-12-01",
+      "endDate": "2013-07-01",
+      "highlights": [
+        "Learned from the creators of the then CBS-owned javascript library, Mootools, while also contributing to the animation library.",
+        "An early adopter of Node JS, integrating with the library to build the first CNET and CBS News mobile sites—built as some of the first single-page applications deployed at scale."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Art Institute of California, San Diego",
+      "area": "Software Development",
+      "studyType": "Bachelor of Science"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software Engineering",
+      "level": "Staff",
+      "keywords": [
+        "Javascript",
+        "HTML",
+        "CSS",
+        "React",
+        "Node",
+        "NPM",
+        "Yarn",
+        "Ruby",
+        "Ruby on Rails",
+        "Python",
+        "PHP",
+        "SQL (MySQL, PostgreSQL)",
+        "Redis",
+        "Memcached",
+        "AWS",
+        "APIs",
+        "Git",
+        "DAM",
+        "Payment Processors",
+        "SEO",
+        "Figma",
+        "Adobe Photoshop",
+        "Adobe Illustrator"
+      ]
+    }
+  ]
+}
