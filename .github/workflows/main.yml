@@ -23,6 +23,7 @@ jobs:
         with:
           folder: dist
           bucket: ${{ secrets.S3_BUCKET }}
+          bucket-region: us-west-1
           dist-id: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
           invalidation: /
           delete-removed: true
