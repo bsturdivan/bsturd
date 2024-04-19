@@ -1,4 +1,5 @@
 import html from './markup.html'
+import keyframes from '../keyframes/keyframes.css' assert { type: 'css' }
 import sheet from './styles.css' assert { type: 'css' }
 import Logo from '../logo'
 import Handle from '../handle'
@@ -16,7 +17,7 @@ class Navigation extends HTMLElement {
 
   connectedCallback() {
     if (this.shadowRoot.styleSheets.length === 0) {
-      this.shadowRoot.adoptedStyleSheets = [sheet]
+      this.shadowRoot.adoptedStyleSheets = [keyframes, sheet]
     }
 
     this.render()
@@ -30,13 +31,13 @@ class Navigation extends HTMLElement {
 
     const themeButtons = [...markup.getElementsByClassName('navigation__item')]
 
-    markup.querySelectorAll('[data-toggle="nav"]')[0].addEventListener('click', this.handleToggleSideNavClick, true)
+    markup
+      .querySelectorAll('[data-toggle="nav"]')[0]
+      .addEventListener('click', this.handleToggleSideNavClick, true)
 
-    document.addEventListener('themeChanged', (event) => {
-      const el = themeButtons.find(
-        (item) => item.getAttribute('data-scheme') === event.detail.theme,
-      )
-      event.detail.element.setAttribute('value', event.detail.value)
+    document.addEventListener('themeChanged', event => {
+      const el = themeButtons.find(item => item.getAttribute('data-scheme') === event.detail.theme)
+      el.setAttribute('value', event.detail.value)
     })
 
     for (let i = 0; i < themeButtons.length; i++) {

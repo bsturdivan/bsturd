@@ -1,10 +1,3 @@
-:root {
-  --rect1: 69px;
-  --rect2: 69px;
-  --rect3: 69px;
-  --rect4: 69px;
-}
-
 .logo {
   filter: blur(0.8px);
   position: relative;
@@ -22,14 +15,16 @@
 
 .logo--pink {
   fill: var(--pink);
-  animation: glitch 1400ms infinite linear alternate-reverse, move-left 2600ms infinite alternate-reverse;
-  animation-delay: -666ms;
+  animation: glitch 1400ms infinite linear alternate-reverse,
+    move-left 2600ms infinite alternate-reverse;
+  animation-delay: -760ms;
   transform: translate(2px, -1px);
 }
 
 .logo--blue {
   fill: var(--blue);
-  animation: glitch 1400ms infinite linear alternate-reverse, move-right 1333ms infinite alternate-reverse;
+  animation: glitch 1400ms infinite linear alternate-reverse,
+    move-right 1333ms infinite alternate-reverse;
   animation-delay: -420ms;
   transform: translate(1px, 0);
   clip-path: polygon(0 50%, 100% 51%, 100% 100%, 0 100%);
@@ -38,7 +33,7 @@
 .logo--green {
   fill: var(--green);
   animation: glitch 1400ms infinite linear alternate-reverse;
-  animation-delay: -333ms;
+  animation-delay: -300ms;
   transform: translate(-2px, 1px);
   clip-path: polygon(0 0, 100% 0, 100% 47%, 0 47%);
 }

@@ -26,22 +26,19 @@ class Layout extends HTMLElement {
 
   render() {
     const parser = new DOMParser()
-    const markup = parser.parseFromString(html.trim(), 'text/html').body
-      .firstChild
+    const markup = parser.parseFromString(html.trim(), 'text/html').body.firstChild
 
     this.shadowRoot.appendChild(markup)
 
     const storedDarkTheme = window.localStorage.getItem(SCHEMES.dark) || false
-    const storedDesaturatedTheme = window.localStorage.getItem(
-      SCHEMES.desaturated,
-    ) || false
+    const storedDesaturatedTheme = window.localStorage.getItem(SCHEMES.desaturated) || false
     const storedBionicTheme = window.localStorage.getItem(SCHEMES.bionic)
 
     this.darkTheme(storedDarkTheme)
     this.desaturateTheme(storedDesaturatedTheme)
     this.bionicTheme(storedBionicTheme)
 
-    document.addEventListener('themeChanged', (event) => {
+    document.addEventListener('themeChanged', event => {
       ga.track('themeChange', { theme: event.detail.theme, value: event.detail.value })
 
       if (event.detail.theme === SCHEMES.dark) {
@@ -58,8 +55,9 @@ class Layout extends HTMLElement {
     })
 
     if (
-      (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ||
-      !window.localStorage.hasOwnProperty(SCHEMES.dark) ||
+      (window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches &&
+        !window.localStorage.hasOwnProperty(SCHEMES.dark)) ||
       window.localStorage.getItem(SCHEMES.dark) === 'null'
     ) {
       document.dispatchEvent(themeChanged({ theme: SCHEMES.dark, value: 'true' }))
@@ -71,10 +69,7 @@ class Layout extends HTMLElement {
 
     window.localStorage.setItem(SCHEMES.dark, parsedvalue)
     document.documentElement.style.setProperty('--darken-ratio', DARKEN_RATIO[parsedvalue])
-    document.documentElement.style.setProperty(
-      '--midtone-darken-ratio',
-      MIDTONE_RATIO[parsedvalue],
-    )
+    document.documentElement.style.setProperty('--midtone-darken-ratio', MIDTONE_RATIO[parsedvalue])
   }
 
   desaturateTheme(value) {

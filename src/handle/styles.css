@@ -28,15 +28,10 @@
   clip-path: polygon(0 50%, 100% 51%, 100% 100%, 0 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  .handle--blue {
-    fill: var(--mauve);
-  }
-}
-
 .handle--green {
   fill: var(--green);
-  animation: glitch 2000ms infinite linear alternate-reverse, move-right 1333ms infinite alternate-reverse;;
+  animation: glitch 2000ms infinite linear alternate-reverse,
+    move-right 1333ms infinite alternate-reverse;
   animation-delay: -666ms;
   transform: translate(-2px, 1px);
   clip-path: polygon(0 0, 100% 0, 100% 47%, 0 47%);
@@ -46,6 +41,19 @@
   fill: var(--green);
   transform-origin: 50% 0%;
   transform: skew(4deg, 1deg);
+}
+
+.ligature--blue {
+  fill: var(--blue);
+  transform-origin: 50% 0%;
+  transform: skew(4deg, 1deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .handle--blue,
+  .ligature--blue {
+    fill: var(--mauve);
+  }
 }
 
 .handle__container {
@@ -89,6 +97,7 @@
 
   .handle__container--open {
     translate: 0;
+    align-items: flex-start;
   }
 }
 

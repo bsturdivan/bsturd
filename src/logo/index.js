@@ -1,7 +1,6 @@
 import logo from './logo.html'
 import keyframes from '../keyframes/keyframes.css' assert { type: 'css' }
 import sheet from './styles.css' assert { type: 'css' }
-import random from '../lib/Random'
 
 class Logo extends HTMLElement {
   constructor() {
@@ -19,8 +18,7 @@ class Logo extends HTMLElement {
 
   render() {
     const parser = new DOMParser()
-    const markup = parser.parseFromString(logo.trim(), 'text/html').body
-      .firstChild
+    const markup = parser.parseFromString(logo.trim(), 'text/html').body.firstChild
 
     this.shadowRoot.appendChild(markup)
   }
